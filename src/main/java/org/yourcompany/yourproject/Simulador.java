@@ -4,14 +4,14 @@ import javax.swing.JOptionPane;
 
 public class Simulador {
     public static void ingresarDatos() {
-        JOptionPane.showMessageDialog(null, "Funcionalidad de ingresar datos (próximamente).");
+        JOptionPane.showMessageDialog(null, "Esta funcionalidad estará disponible en la próxima entrega.");
     }
 
     public static void mostrarResultados() {
-        JOptionPane.showMessageDialog(null, "Resultados aún no disponibles.");
+        JOptionPane.showMessageDialog(null, "Resultados estarán disponibles en la próxima entrega.");
     }
 
     public static void mostrarCronograma() {
-        JOptionPane.showMessageDialog(null, "Cronograma de pragos en desarrollo.");
+        JOptionPane.showMessageDialog(null, "Cronograma de pagos dispinible en la próxima entrega.");
     }
 }

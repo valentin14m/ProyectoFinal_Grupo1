@@ -15,7 +15,6 @@ package org.yourcompany.yourproject;
 // Universidad Fidélitas
 // Profesor: Ing. Bryan Cerdas Salas
 
-
 public class ProyectoFinal_Grupo1 {
 
     public static void main(String[] args) {
@@ -25,7 +24,7 @@ public class ProyectoFinal_Grupo1 {
         if (accesoPermitido) {
             Menu.mostrar();
         } else {
-            System.out.println("Acceso denegado. Fin del programa.");
+            System.out.println("Acceso denegado. Se finalizará el programa.");
         }
     }
 }

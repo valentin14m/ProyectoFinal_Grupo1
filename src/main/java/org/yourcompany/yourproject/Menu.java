@@ -34,7 +34,7 @@ public class Menu {
                     break;
                 case 2:
                 case JOptionPane.CLOSED_OPTION:
-                    JOptionPane.showMessageDialog(null, "Gracias por usar el simulador.");
+                    JOptionPane.showMessageDialog(null, "Muchas gracias por usar el simulador de prestamos bancarios. ¡Hasta luego!", "Salir", JOptionPane.INFORMATION_MESSAGE);
                     break;
             }
 
