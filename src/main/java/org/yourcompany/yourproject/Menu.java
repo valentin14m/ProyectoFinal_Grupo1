@@ -75,7 +75,7 @@ public class Menu {
                     break;
                 case 3:
                 case JOptionPane.CLOSED_OPTION:
-                    return; // Regresar al menú principal
+                    return; //   Regresar al menú principal
             }
 
         } while (opcion != 3 && opcion != JOptionPane.CLOSED_OPTION);
@@ -83,8 +83,8 @@ public class Menu {
 
     private static void mostrarInformacion() {
         String info = """
-        Simulador de Préstamos Bancarios
-        
+         ----Simulador de Préstamo Bancario----
+            
         Universidad Fidélitas
         Curso: Introducción a la Programación
         Profesor: Ing. Bryan Cerdas Salas
