@@ -94,7 +94,7 @@ public class Simulador {
 
         String cronograma = prestamoActual.generarCronogramaPagos();
 
-        // Mostrar el cronograma de pagos como texto en un cuadro de diálogo simple
+       
         JOptionPane.showMessageDialog(null, cronograma, "Cronograma de Pagos", JOptionPane.INFORMATION_MESSAGE);
     }
 
