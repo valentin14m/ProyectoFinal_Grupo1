@@ -3,6 +3,7 @@ package org.yourcompany.yourproject;
 import javax.swing.JOptionPane;
 
 public class Simulador {
+    
     public static void ingresarDatos() {
         JOptionPane.showMessageDialog(null, "Esta funcionalidad estará disponible en la próxima entrega.");
     }

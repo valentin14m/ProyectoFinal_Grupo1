@@ -1,4 +1,4 @@
-package org.yourcompany.yourproject; 
+package org.yourcompany.yourproject;
 
 import javax.swing.JOptionPane;
 
@@ -13,23 +13,42 @@ public class Login {
 
         while (intentos < MAX_INTENTOS) {
             String usuario = JOptionPane.showInputDialog(null, "Por favor ingrese su usuario:", "Inicio de Sesión", JOptionPane.QUESTION_MESSAGE);
+
+            if (usuario == null) {
+                int confirmarSalir = JOptionPane.showConfirmDialog(null, "¿Está seguro de que desea cancelar el inicio de sesión?", "Cancelar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (confirmarSalir == JOptionPane.YES_OPTION) {
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    return false;
+                } else {
+                    continue;
+                }
+            }
+
             String contrasena = JOptionPane.showInputDialog(null, "Por favor ingrese su contraseña:", "Inicio de Sesión", JOptionPane.QUESTION_MESSAGE);
 
-            if (usuario == null || contrasena == null) {
-                JOptionPane.showMessageDialog(null, "Inicio de sesión cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
-                return false;
+            if (contrasena == null) {
+                int confirmarSalir = JOptionPane.showConfirmDialog(null, "¿Está seguro de que desea cancelar el inicio de sesión?", "Cancelar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (confirmarSalir == JOptionPane.YES_OPTION) {
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión cancelado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    return false;
+                } else {
+                    continue;
+                }
             }
 
             if (usuario.equals(USUARIO_CORRECTO) && contrasena.equals(CONTRASENA_CORRECTA)) {
-                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso. ¡Bienvenido al simulador de prestamos bancarios!", "Inicio de Sesión Exitoso", JOptionPane.INFORMATION_MESSAGE  );
+                JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso. ¡Bienvenido al simulador de préstamos bancarios!", "Inicio de Sesión Exitoso", JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else {
                 intentos++;
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos. Intento " + intentos + " de " + MAX_INTENTOS, "Error de Inicio de Sesión", JOptionPane.ERROR_MESSAGE);
+                String errorMessage = String.format("Usuario o contraseña incorrectos. Intento %d de %d", intentos, MAX_INTENTOS);
+                if (intentos == MAX_INTENTOS) {
+                    errorMessage += "\nSe han realizado demasiados intentos fallidos. El sistema se cerrará.";
+                }
+                JOptionPane.showMessageDialog(null, errorMessage, "Error de Inicio de Sesión", JOptionPane.ERROR_MESSAGE);
             }
         }
 
-        JOptionPane.showMessageDialog(null, "Se han realizado demasiados intentos fallidos. El sistema se cerrará.");
         return false;
     }
 }

@@ -31,11 +31,11 @@ public class Prestamo {
             return 0.0;
         }
 
-        return numerador / denominador;
+        return redondear(numerador / denominador);
     }
 
     public double calcularCostoTotal() {
-        return calcularCuotaMensual() * plazoMeses;
+        return redondear(calcularCuotaMensual() * plazoMeses);
     }
 
     public String generarCronogramaPagos() {
@@ -49,14 +49,18 @@ public class Prestamo {
             double abonoCapital = cuota - interes;
             saldo -= abonoCapital;
 
-            interes = (int)(interes * 100) / 100.0;
-            abonoCapital = (int)(abonoCapital * 100) / 100.0;
-            saldo = (int)(saldo * 100) / 100.0;
+            interes = redondear(interes);
+            abonoCapital = redondear(abonoCapital);
+            saldo = redondear(saldo);
 
             cronograma += mes + "\t" + interes + "\t\t" + abonoCapital + "\t\t" + (saldo < 0 ? 0 : saldo) + "\n";
         }
 
         return cronograma;
+    }
+
+    private double redondear(double valor) {
+        return (int)(valor * 100) / 100.0;
     }
 
     public double getMonto() { return monto; }

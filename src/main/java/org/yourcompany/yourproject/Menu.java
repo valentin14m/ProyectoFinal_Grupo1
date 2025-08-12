@@ -6,9 +6,9 @@ public class Menu {
 
     public static void mostrar() {
         String[] opciones = {
-            "Simular préstamo.",
-            "Acerca del simulador.",
-            "Salir."
+            "Iniciar simulación de préstamo.",
+            "Información sobre el simulador.",
+            "Salir del simulador."
         };
 
         int opcion;
@@ -34,20 +34,29 @@ public class Menu {
                     break;
                 case 2:
                 case JOptionPane.CLOSED_OPTION:
-                    JOptionPane.showMessageDialog(null, "Muchas gracias por usar el simulador de prestamos bancarios. ¡Hasta luego!", "Salir", JOptionPane.INFORMATION_MESSAGE);
+                    int confirmacion = JOptionPane.showConfirmDialog(
+                        null, 
+                        "¿Está seguro de que desea salir?", 
+                        "Confirmación de salida", 
+                        JOptionPane.YES_NO_OPTION, 
+                        JOptionPane.QUESTION_MESSAGE
+                    );
+                    if (confirmacion == JOptionPane.YES_OPTION) {
+                        JOptionPane.showMessageDialog(null, "Muchas gracias por usar el simulador de préstamos bancarios. ¡Hasta luego!", "Salir", JOptionPane.INFORMATION_MESSAGE);
+                        return; // Salir del programa
+                    }
                     break;
             }
 
         } while (opcion != 2 && opcion != JOptionPane.CLOSED_OPTION);
     }
 
-    // Submenú específico del simulador
     private static void mostrarSubmenuSimulador() {
         String[] opciones = {
             "Ingresar datos del préstamo.",
-            "Ver resultados.",
+            "Ver resultados del préstamo.",
             "Ver cronograma de pagos.",
-            "Volver."
+            "Volver al menú principal."
         };
 
         int opcion;
@@ -75,7 +84,7 @@ public class Menu {
                     break;
                 case 3:
                 case JOptionPane.CLOSED_OPTION:
-                    return; //   Regresar al menú principal
+                    return;
             }
 
         } while (opcion != 3 && opcion != JOptionPane.CLOSED_OPTION);
