@@ -43,7 +43,7 @@ public class Menu {
                     );
                     if (confirmacion == JOptionPane.YES_OPTION) {
                         JOptionPane.showMessageDialog(null, "Muchas gracias por usar el simulador de préstamos bancarios. ¡Hasta luego!", "Salir", JOptionPane.INFORMATION_MESSAGE);
-                        return; // Salir del programa
+                        return;
                     }
                     break;
             }

@@ -126,7 +126,7 @@ public class Simulador {
                 }
                 return val;
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Ingrese un número válido.", "Dato inválido", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Por favor ingrese un número válido.", "Dato inválido", JOptionPane.WARNING_MESSAGE);
             }
         }
     }
@@ -145,7 +145,7 @@ public class Simulador {
                 }
                 return val;
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Ingrese un número entero válido.", "Dato inválido", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Por favor ingrese un número entero válido.", "Dato inválido", JOptionPane.WARNING_MESSAGE);
             }
         }
     }
